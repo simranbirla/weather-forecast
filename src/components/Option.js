@@ -9,7 +9,6 @@ class Option extends React.Component {
         console.log(pos.coords.longitude);
       },
       (err) => {
-        console.log(err.message);
         this.setState({ error: err.message });
       }
     );
