@@ -5,8 +5,7 @@ class Option extends React.Component {
   currentLocation = () => {
     navigator.geolocation.getCurrentPosition(
       (pos) => {
-        console.log(pos.coords.latitude);
-        console.log(pos.coords.longitude);
+        this.setState({ lat: pos.coords.latitude, lon: pos.coords.longitude });
       },
       (err) => {
         this.setState({ error: err.message });
