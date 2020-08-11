@@ -1,11 +1,21 @@
 import React from "react";
 
 class Option extends React.Component {
+  currentLocation = () => {
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        console.log(pos);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  };
+
   render() {
     return (
       <div>
-        <input type="text" placeholder="Enter the location" />
-        <button>Detect</button>
+        <button onClick={this.currentLocation}>Detect</button>
       </div>
     );
   }
