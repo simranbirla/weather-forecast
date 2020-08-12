@@ -4,7 +4,7 @@ import axios from "axios";
 const YOUR_API_KEY = "868bb8a6f60bbc8eaae250c4afef2bf8";
 class Weather extends React.Component {
   state = { weather: "" };
-  weatherCall = async (lat = "19.2371135", lon = "73.146635") => {
+  weatherCall = async (lat = "40.12", lon = "-96.66") => {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&
         exclude=hourly,daily&appid=${YOUR_API_KEY}`);
     const data = await response.json();

@@ -1,7 +1,7 @@
 import React from "react";
 
 class Option extends React.Component {
-  state = { lat: "", lon: "", error: "" };
+  state = { lat: " 40.12", lon: "-96.66", error: "" };
   currentLocation = () => {
     navigator.geolocation.getCurrentPosition(
       (pos) => {

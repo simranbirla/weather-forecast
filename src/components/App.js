@@ -3,7 +3,7 @@ import Option from "./Option";
 import Weather from "./Weather";
 
 class App extends React.Component {
-  state = { lon: "", lat: "" };
+  state = { lat: "40.12", lon: "-96.66" };
 
   onClickLocation = (lat, lon) => {
     console.log(lat, lon);
