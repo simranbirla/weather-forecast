@@ -12,7 +12,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        Hello there
         <Option onClickLocation={this.onClickLocation} />
         <Weather lon={this.state.lon} lat={this.state.lat} />
       </div>
