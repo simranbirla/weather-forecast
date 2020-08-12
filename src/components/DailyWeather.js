@@ -1,10 +1,10 @@
 import React from "react";
-
+import "../Style/DailyWeather.css";
 class DailyWeather extends React.Component {
-  state = { show: false };
+  state = { show: [false, false, false, false, false, false, false, false] };
 
-  showItems(day) {
-    if (this.state.show) {
+  showItems(day, index) {
+    if (this.state[index]) {
       return (
         <>
           <p>
@@ -15,7 +15,6 @@ class DailyWeather extends React.Component {
             <b>{day.temp.max}&deg;C</b>
           </p>
           <p>
-            {" "}
             <i className="fas fa-wind" /> {day.wind_deg} degress{" "}
             {day.wind_speed}m/s
           </p>
@@ -28,16 +27,20 @@ class DailyWeather extends React.Component {
     if (!this.props.dailyWeather) {
       return <div></div>;
     } else {
-      return this.props.dailyWeather.map((day) => {
+      return this.props.dailyWeather.map((day, index) => {
         return (
-          <div key={day.dt} style={{ border: "1px solid black" }}>
+          <div
+            key={day.dt}
+            style={{ border: "1px solid black" }}
+            className="grid-direct"
+          >
             <div>
               <p>
                 Time:{new Date(day.dt * 1000).toLocaleString()}
                 <i
                   className="fas fa-caret-down"
                   style={{ cursor: "pointer" }}
-                  onClick={() => this.setState({ show: !this.state.show })}
+                  onClick={() => this.setState({ [index]: !this.state[index] })}
                 ></i>
               </p>
               <h4>
@@ -45,8 +48,9 @@ class DailyWeather extends React.Component {
               </h4>
               <img
                 src={` http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
+                alt={day.weather[0].description}
               />
-              {this.showItems(day)}
+              {this.showItems(day, index)}
             </div>
           </div>
         );
@@ -56,10 +60,11 @@ class DailyWeather extends React.Component {
 
   render() {
     console.log(this.props.dailyWeather);
+
     return (
       <div>
         <h2>8 days forecast</h2>
-        {this.renderDaily()}
+        <div className="grid-container">{this.renderDaily()}</div>
       </div>
     );
   }
