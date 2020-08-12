@@ -7,9 +7,18 @@ class DailyWeather extends React.Component {
     if (this.state.show) {
       return (
         <>
-          <p>humidity:{day.humidity}%</p>
-          <p>Min Temp:{day.temp.min}</p>
-          <p>Max Temp:{day.temp.max}</p>
+          <p>
+            Humidity:<b>{day.humidity}%</b>
+          </p>
+          <p>
+            Min Temp:<b>{day.temp.min}&deg;C</b> Max Temp:
+            <b>{day.temp.max}&deg;C</b>
+          </p>
+          <p>
+            {" "}
+            <i className="fas fa-wind" /> {day.wind_deg} degress{" "}
+            {day.wind_speed}m/s
+          </p>
         </>
       );
     }
