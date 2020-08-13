@@ -2,6 +2,7 @@ import React from "react";
 import Option from "./Option";
 import Weather from "./Weather";
 import Mychart from "./Chart";
+import Bar from "./BarExample";
 
 class App extends React.Component {
   state = { lat: "40.12", lon: "-96.66", weather: "" };
@@ -17,7 +18,12 @@ class App extends React.Component {
 
   onLoaded = () => {
     if (this.state.weather) {
-      return <Mychart data={this.state.weather.hourly} />;
+      return (
+        <>
+          <Mychart data={this.state.weather.hourly} />;
+          <Bar data={this.state.weather} />
+        </>
+      );
     }
   };
   render() {

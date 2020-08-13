@@ -13,7 +13,6 @@ function MyChart(props) {
     return [day.dt, day.feels_like];
   });
 
-  console.log(humidity);
   const data = React.useMemo(
     () => [
       {
