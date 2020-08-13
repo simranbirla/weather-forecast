@@ -1,4 +1,5 @@
 import React from "react";
+import UserInput from "./UserInput";
 
 class Option extends React.Component {
   state = { lat: " 40.12", lon: "-96.66", error: "" };
@@ -13,6 +14,10 @@ class Option extends React.Component {
       }
     );
   };
+  formSubmit(lat, lon) {
+    console.log(lat, lon);
+    this.setState({ lat: lat, lon: lon });
+  }
 
   render() {
     if (this.state.error) {
@@ -21,6 +26,7 @@ class Option extends React.Component {
     return (
       <div>
         <button onClick={this.currentLocation}>Detect</button>
+        <UserInput formSubmit={this.formSubmit} />
       </div>
     );
   }
