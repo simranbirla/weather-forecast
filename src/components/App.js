@@ -17,7 +17,7 @@ class App extends React.Component {
 
   onLoaded = () => {
     if (this.state.weather) {
-      return <Mychart data={this.state.weather.current.humidity} />;
+      return <Mychart data={this.state.weather.hourly} />;
     }
   };
   render() {

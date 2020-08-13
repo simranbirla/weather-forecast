@@ -2,21 +2,27 @@ import React from "react";
 import { Chart } from "react-charts";
 
 function MyChart(props) {
-  const el = props.data;
-  console.log(el);
-  const e = 30;
+  const daily_arr = props.data;
+  const new_arr = daily_arr.map((day) => {
+    let date = new Date(day.dt * 1000).getDate();
+    return [day.dt, day.temp];
+  });
 
+  const humidity = daily_arr.map((day) => {
+    let date = new Date(day.dt * 1000).getHours();
+    return [day.dt, day.feels_like];
+  });
+
+  console.log(humidity);
   const data = React.useMemo(
-    (props) => [
+    () => [
       {
-        label: "Series 1",
-        data: [
-          [0, el],
-          [1, e],
-          [2, 4],
-          [3, 2],
-          [4, 7],
-        ],
+        label: "Temperature",
+        data: new_arr,
+      },
+      {
+        label: "Feels_like",
+        data: humidity,
       },
     ],
     []
@@ -24,7 +30,7 @@ function MyChart(props) {
 
   const axes = React.useMemo(
     () => [
-      { primary: true, type: "linear", position: "bottom" },
+      { primary: true, type: "time", position: "bottom" },
       { type: "linear", position: "left" },
     ],
     []
@@ -35,11 +41,11 @@ function MyChart(props) {
     // space of its parent element automatically
     <div
       style={{
-        width: "400px",
+        width: "800px",
         height: "300px",
       }}
     >
-      <Chart data={data} axes={axes} />
+      <Chart data={data} axes={axes} tooltip />
     </div>
   );
 
