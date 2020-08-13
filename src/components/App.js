@@ -16,12 +16,17 @@ class App extends React.Component {
     console.log(this.state.weather);
   };
 
+  decideFunction() {
+    if (this.state.weather.current.rain) {
+      return <Bar data={this.state.weather} />;
+    }
+  }
+
   onLoaded = () => {
     if (this.state.weather) {
       return (
         <>
-          <Mychart data={this.state.weather.hourly} />;
-          <Bar data={this.state.weather} />
+          <Mychart data={this.state.weather.hourly} />;{this.decideFunction()}
         </>
       );
     }

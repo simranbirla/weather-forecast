@@ -8,11 +8,10 @@ export default class BarExample extends React.Component {
       let time = new Date(hour.dt * 1000).getHours();
       return time;
     });
+
     const data = weather_hour.map((hour) => {
-      if (hour.rain) {
-        return hour.rain["1h"];
-      } else if (hour.snow) {
-        return true;
+      if (hour.rain || hour.snow) {
+        return hour.rain["1h"] || hour.snow["1h"];
       } else {
         return 0;
       }
@@ -22,7 +21,7 @@ export default class BarExample extends React.Component {
       labels: labels,
       datasets: [
         {
-          label: "My First dataset",
+          label: "Rainfall in mm for 48 hours",
           backgroundColor: "rgba(255,99,132,0.2)",
           borderColor: "rgba(255,99,152,1)",
           borderWidth: 1,
