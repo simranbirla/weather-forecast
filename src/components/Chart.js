@@ -1,14 +1,18 @@
 import React from "react";
 import { Chart } from "react-charts";
 
-function MyChart() {
+function MyChart(props) {
+  const el = props.data;
+  console.log(el);
+  const e = 30;
+
   const data = React.useMemo(
-    () => [
+    (props) => [
       {
         label: "Series 1",
         data: [
-          [0, 1],
-          [1, 2],
+          [0, el],
+          [1, e],
           [2, 4],
           [3, 2],
           [4, 7],

@@ -10,6 +10,7 @@ class Weather extends React.Component {
     const data = await response.json();
 
     this.setState({ weather: data });
+    this.props.dataFunction(this.state.weather);
   };
 
   componentDidMount() {
@@ -29,7 +30,6 @@ class Weather extends React.Component {
   }
 
   render() {
-    console.log(this.state.weather);
     return (
       <div>
         <h1>Weather</h1>
