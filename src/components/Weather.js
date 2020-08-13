@@ -29,6 +29,7 @@ class Weather extends React.Component {
   }
 
   render() {
+    console.log(this.state.weather);
     return (
       <div>
         <h1>Weather</h1>

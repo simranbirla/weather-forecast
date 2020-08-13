@@ -1,6 +1,7 @@
 import React from "react";
 import Option from "./Option";
 import Weather from "./Weather";
+import Mychart from "./Chart";
 
 class App extends React.Component {
   state = { lat: "40.12", lon: "-96.66" };
@@ -14,6 +15,7 @@ class App extends React.Component {
       <div>
         <Option onClickLocation={this.onClickLocation} />
         <Weather lon={this.state.lon} lat={this.state.lat} />
+        <Mychart />
       </div>
     );
   }

@@ -59,8 +59,6 @@ class DailyWeather extends React.Component {
   }
 
   render() {
-    console.log(this.props.dailyWeather);
-
     return (
       <div>
         <h2>8 days forecast</h2>
