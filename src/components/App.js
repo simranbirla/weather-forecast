@@ -3,6 +3,7 @@ import Option from "./Option";
 import Weather from "./Weather";
 import Mychart from "./Chart";
 import Bar from "./BarExample";
+import CurrentWeather from "./CurrentWeather";
 
 class App extends React.Component {
   state = { lat: "40.12", lon: "-96.66", weather: "" };
@@ -13,11 +14,10 @@ class App extends React.Component {
 
   dataFunction = (weather) => {
     this.setState({ weather: weather });
-    console.log(this.state.weather);
   };
 
   decideFunction() {
-    if (this.state.weather.current.rain) {
+    if (this.state.weather.current.rain || this.state.weather.current.snow) {
       return <Bar data={this.state.weather} />;
     }
   }
@@ -26,6 +26,7 @@ class App extends React.Component {
     if (this.state.weather) {
       return (
         <>
+          <CurrentWeather data={this.state.weather} />
           <Mychart data={this.state.weather.hourly} />;{this.decideFunction()}
         </>
       );
@@ -35,12 +36,12 @@ class App extends React.Component {
     return (
       <div>
         <Option onClickLocation={this.onClickLocation} />
+        {this.onLoaded()}
         <Weather
           lon={this.state.lon}
           lat={this.state.lat}
           dataFunction={this.dataFunction}
         />
-        {this.onLoaded()}
       </div>
     );
   }
