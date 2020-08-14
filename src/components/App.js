@@ -16,11 +16,14 @@ class App extends React.Component {
     this.setState({ weather: weather });
   };
 
-  decideFunction() {
-    if (this.state.weather.current.rain || this.state.weather.current.snow) {
+  decideFunction = () => {
+    if (
+      this.state.weather.current.hasOwnProperty("rain") ||
+      this.state.weather.current.hasOwnProperty("snow")
+    ) {
       return <Bar data={this.state.weather} />;
     }
-  }
+  };
 
   onLoaded = () => {
     if (this.state.weather) {

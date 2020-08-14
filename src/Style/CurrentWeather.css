@@ -1,0 +1,25 @@
+.current-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  color: "#27496d";
+}
+
+.back-img {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  opacity: 0.5;
+  width: 80%;
+  height: 100%;
+  z-index: -2;
+}
+
+.info {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: "#27496d";
+}

@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../Style/Option.css";
 class UserInput extends React.Component {
   state = { lat: "", lon: "" };
 
@@ -10,18 +10,19 @@ class UserInput extends React.Component {
     this.setState({ lat: e.target.value });
   };
 
-  formSubmit = () => {
+  formSubmit = (e) => {
+    e.preventDefault();
     if (this.state.lat && this.state.lon) {
       this.props.formSubmit(this.state.lat, this.state.lon);
     }
   };
   render() {
     return (
-      <form onSubmit={this.formSubmit}>
+      <form onSubmit={this.formSubmit} className="location-form">
         <input placeholder="Enter latitude" onChange={this.latChange} />
         <input placeholder="Enter longitude" onChange={this.lonChange} />
-        <button type="submit" className="submit btn">
-          Use location
+        <button type="submit" className="submit">
+          Go<i className="fas fa-location-arrow"></i>
         </button>
       </form>
     );

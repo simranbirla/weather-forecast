@@ -1,5 +1,6 @@
 import React from "react";
 import UserInput from "./UserInput";
+import "../Style/Option.css";
 
 class Option extends React.Component {
   state = { lat: " 40.12", lon: "-96.66", error: "" };
@@ -14,18 +15,21 @@ class Option extends React.Component {
       }
     );
   };
-  formSubmit(lat, lon) {
+  formSubmit = (lat, lon) => {
     console.log(lat, lon);
     this.setState({ lat: lat, lon: lon });
-  }
+    this.props.onClickLocation(lat, lon);
+  };
 
   render() {
     if (this.state.error) {
       return <div>{this.state.error}</div>;
     }
     return (
-      <div>
-        <button onClick={this.currentLocation}>Detect</button>
+      <div className="option">
+        <button onClick={this.currentLocation} className="loc btn">
+          Detect <i className="fas fa-map-marker-alt"></i>
+        </button>
         <UserInput formSubmit={this.formSubmit} />
       </div>
     );
