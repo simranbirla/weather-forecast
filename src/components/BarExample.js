@@ -37,8 +37,13 @@ export default class BarExample extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Rain precepitition</h2>
+      <div
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(204,225,226,1) 15%, rgba(249,249,249,1) 100%)",
+        }}
+      >
+        <h2 style={{ textAlign: "center" }}>Rain precepitition</h2>
         <Bar
           data={this.dataHelper()}
           width={100}

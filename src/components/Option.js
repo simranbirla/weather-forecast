@@ -3,7 +3,7 @@ import UserInput from "./UserInput";
 import "../Style/Option.css";
 
 class Option extends React.Component {
-  state = { lat: " 40.12", lon: "-96.66", error: "" };
+  state = { lat: "19.07", lon: "72.87", error: "" };
   currentLocation = () => {
     navigator.geolocation.getCurrentPosition(
       (pos) => {
@@ -16,7 +16,6 @@ class Option extends React.Component {
     );
   };
   formSubmit = (lat, lon) => {
-    console.log(lat, lon);
     this.setState({ lat: lat, lon: lon });
     this.props.onClickLocation(lat, lon);
   };

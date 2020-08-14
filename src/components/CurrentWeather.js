@@ -3,7 +3,6 @@ import "../Style/CurrentWeather.css";
 
 class CurrentWeather extends React.Component {
   onDisplay() {
-    console.log(this.props.data.current);
     const info = this.props.data.current;
     return (
       <div>

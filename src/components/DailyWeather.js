@@ -61,7 +61,7 @@ class DailyWeather extends React.Component {
   render() {
     return (
       <div>
-        <h2>8 days forecast</h2>
+        <h2 style={{ textAlign: "center" }}>8 days forecast</h2>
         <div className="grid-container">{this.renderDaily()}</div>
       </div>
     );

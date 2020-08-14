@@ -60,10 +60,20 @@
   font-size: 1.2em;
 }
 
-.submit:focus {
+.submit:active {
   outline: none;
+  transform: scale(1.2);
 }
 
 .submit:hover {
   opacity: 1;
+}
+
+.btn:focus,
+.submit:focus {
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(1.2);
 }

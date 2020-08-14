@@ -7,7 +7,7 @@ import CurrentWeather from "./CurrentWeather";
 import "../Style/index.css";
 
 class App extends React.Component {
-  state = { lat: "40.12", lon: "-96.66", weather: "" };
+  state = { lat: "19.07", lon: "72.87", weather: "" };
 
   onClickLocation = (lat, lon) => {
     this.setState({ lon: lon, lat: lat });

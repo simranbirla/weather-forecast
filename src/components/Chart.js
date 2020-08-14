@@ -40,8 +40,12 @@ function MyChart(props) {
     // space of its parent element automatically
     <div
       style={{
-        width: "800px",
+        width: "90%",
         height: "300px",
+        margin: "20px auto",
+        overflow: "hidden",
+        background:
+          "linear-gradient(90deg, rgba(204,225,226,1) 15%, rgba(249,249,249,1) 100%)",
       }}
     >
       <Chart data={data} axes={axes} tooltip />
