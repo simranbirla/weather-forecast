@@ -1,6 +1,8 @@
 .option {
   display: flex;
   box-sizing: border-box;
+  background-color: "#eef9bf";
+  margin-bottom: 20px;
 }
 
 .btn {

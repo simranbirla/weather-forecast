@@ -4,6 +4,7 @@ import Weather from "./Weather";
 import Mychart from "./Chart";
 import Bar from "./BarExample";
 import CurrentWeather from "./CurrentWeather";
+import "../Style/index.css";
 
 class App extends React.Component {
   state = { lat: "40.12", lon: "-96.66", weather: "" };
@@ -37,7 +38,7 @@ class App extends React.Component {
   };
   render() {
     return (
-      <div>
+      <div className="main">
         <Option onClickLocation={this.onClickLocation} />
         {this.onLoaded()}
         <Weather
