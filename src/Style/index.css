@@ -5,13 +5,5 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: "#e1f2fb";
-}
-
-#root {
-  background-color: "#e1f2fb";
-}
-
-.main {
-  background-color: "#e1f2fb";
+  background-color: #e1f2fb;
 }
