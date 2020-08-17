@@ -25,7 +25,7 @@ class Option extends React.Component {
       return <div>{this.state.error}</div>;
     }
     return (
-      <div className="option" style={{ backgroundColor: "#eef9bf" }}>
+      <div className="option">
         <button onClick={this.currentLocation} className="loc btn">
           Detect <i className="fas fa-map-marker-alt"></i>
         </button>

@@ -5,5 +5,11 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #e1f2fb;
+  background: rgb(140, 255, 242);
+  background: linear-gradient(
+    90deg,
+    rgba(140, 255, 242, 1) 28%,
+    rgba(55, 144, 172, 1) 56%,
+    rgba(5, 87, 133, 1) 98%
+  );
 }
