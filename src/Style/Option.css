@@ -60,12 +60,8 @@
   font-size: 1.2em;
 }
 
-.submit:active {
-  outline: none;
-  transform: scale(1.2);
-}
-
-.submit:hover {
+.submit:hover,
+.btn:hover {
   opacity: 1;
 }
 
@@ -74,6 +70,31 @@
   outline: none;
 }
 
-.btn:active {
-  transform: scale(1.2);
+.btn:active,
+.submit:active {
+  position: relative;
+  top: 2px;
+}
+
+@media (max-width: 700px) {
+  .location-form {
+    flex-direction: column;
+    margin: 0 40px;
+    width: 100%;
+  }
+  .location-form input {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .submit {
+    width: 50%;
+    padding: 5px 0;
+  }
+
+  .btn {
+    width: 40%;
+    margin: 25px 10px;
+    height: 50px;
+  }
 }

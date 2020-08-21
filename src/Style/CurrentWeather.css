@@ -22,10 +22,16 @@
 .info {
   font-size: 1.4em;
   font-weight: bold;
-  color: "#27496d";
+  color: #27496d;
   z-index: 10;
 }
 
 .current-info {
   z-index: 10;
+}
+
+@media (max-width: 700px) {
+  .info {
+    font-size: 1em;
+  }
 }
