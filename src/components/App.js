@@ -31,7 +31,10 @@ class App extends React.Component {
       return (
         <>
           <CurrentWeather data={this.state.weather} />
-          <Mychart data={this.state.weather.hourly} />;{this.decideFunction()}
+          {
+            //<Mychart data={this.state.weather.hourly} />
+          }
+          <Bar data={this.state.weather} />
         </>
       );
     }

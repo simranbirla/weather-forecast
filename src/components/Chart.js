@@ -4,7 +4,9 @@ import { Chart } from "react-charts";
 function MyChart(props) {
   const daily_arr = props.data;
   const new_arr = daily_arr.map((day) => {
-    let date = new Date(day.dt * 1000).getDate();
+    let date = new Date(day.dt * 1000).toLocaleString("en-US", {
+      hour: "numeric",
+    });
     return [day.dt, day.temp];
   });
 
@@ -29,7 +31,7 @@ function MyChart(props) {
 
   const axes = React.useMemo(
     () => [
-      { primary: true, type: "time", position: "bottom" },
+      { primary: true, type: "linear", position: "bottom" },
       { type: "linear", position: "left" },
     ],
     []
