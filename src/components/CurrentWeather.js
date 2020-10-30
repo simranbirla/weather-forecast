@@ -38,28 +38,28 @@ class CurrentWeather extends React.Component {
       </div>
     );
   }
+  
+    onDisplayImg = (weather) => {
+      switch (weather) {
+        case "Rain":
+          return "https://www.thoughtco.com/thmb/e-lNG0rEXRiAfHNtR6RLOL98XPo=/2576x2576/smart/filters:no_upscale()/drops-of-rain-on-glass-838815210-5a823cc0a18d9e0036e325e2.jpg";
 
-  onDisplayImg = (weather) => {
-    switch (weather) {
-      case "Rain":
-        return "https://www.thoughtco.com/thmb/e-lNG0rEXRiAfHNtR6RLOL98XPo=/2576x2576/smart/filters:no_upscale()/drops-of-rain-on-glass-838815210-5a823cc0a18d9e0036e325e2.jpg";
+        case "Thunderstrom":
+          return "https://i.pinimg.com/originals/bc/e5/b3/bce5b333cb399a0eb7b12bdbd698390f.jpg";
 
-      case "Thunderstrom":
-        return "https://i.pinimg.com/originals/bc/e5/b3/bce5b333cb399a0eb7b12bdbd698390f.jpg";
+        case "Drizzle":
+          return "https://c0.wallpaperflare.com/preview/592/660/905/window-drizzle-gray-foggy.jpg";
 
-      case "Drizzle":
-        return "https://c0.wallpaperflare.com/preview/592/660/905/window-drizzle-gray-foggy.jpg";
+        case "Snow":
+          return "https://i.pinimg.com/originals/71/f7/ed/71f7ed7f43b268b4507d7bb8dee672e1.jpg";
 
-      case "Snow":
-        return "https://i.pinimg.com/originals/71/f7/ed/71f7ed7f43b268b4507d7bb8dee672e1.jpg";
+        case "Clouds":
+          return "https://img.freepik.com/free-photo/black-rain-abstract-dark-power_1127-2380.jpg?size=626&ext=jpg";
 
-      case "Clouds":
-        return "https://img.freepik.com/free-photo/black-rain-abstract-dark-power_1127-2380.jpg?size=626&ext=jpg";
-
-      default:
-        return "https://png.pngtree.com/thumb_back/fh260/back_our/20190625/ourmid/pngtree-clear-sky-with-layers-of-clouds-image_260456.jpg";
-    }
-  };
+        default:
+          return "https://png.pngtree.com/thumb_back/fh260/back_our/20190625/ourmid/pngtree-clear-sky-with-layers-of-clouds-image_260456.jpg";
+      }
+    };
 
   render() {
     return (
