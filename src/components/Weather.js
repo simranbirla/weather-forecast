@@ -1,6 +1,6 @@
 import React from "react";
-import DailyWeather from "./DailyWeather";
 import "../Style/DailyWeather.css";
+import DailyWeather from "./DailyWeather";
 
 const YOUR_API_KEY = "868bb8a6f60bbc8eaae250c4afef2bf8";
 class Weather extends React.Component {
@@ -14,14 +14,14 @@ class Weather extends React.Component {
     this.props.dataFunction(this.state.weather);
   };
 
-  componentDidMount() {
-    this.weatherCall(this.props.lat, this.props.lon);
-  }
-
   componentDidUpdate(prevprops) {
     if (prevprops.lat !== this.props.lat) {
       this.weatherCall(this.props.lat, this.props.lon);
     }
+  }
+
+  componentDidMount() {
+    this.weatherCall(this.props.lat, this.props.lon);
   }
 
   renderList() {
@@ -42,6 +42,8 @@ class Weather extends React.Component {
       );
     }
   }
+
+// JSX code here
 
   render() {
     return (
